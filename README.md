@@ -27,7 +27,16 @@ Mac とか Linux とかだとこうなります。
 ```
 cat vscode-extensions.txt | while read line; do code --install-extension $line; done
 ```
-　　
+
+このシェルスクリプトはUbuntuとmacOSの両方に対応していますが、スクリプトは、VSCodeがシステムにインストールされており、
+codeコマンドがパスに設定されていることを前提としています。 
+macOSでは、VSCodeを公式サイトからダウンロードしてインストールした場合、codeコマンドがパスに設定されていない可能性があります。
+その場合は、以下の手順でパスを設定してください。
+1. VSCodeを開きます。
+2. コマンドパレット（Cmd+Shift+P）を開きます。
+3. "Shell Command: Install 'code' command in PATH" と入力し選択します。
+4. ターミナルを再起動して、変更を反映させます
+
 
 　　
 # Bulk Installation Shell for Commonly Recommended Laravel Extensions in Visual Studio Code
@@ -56,3 +65,11 @@ For Mac or Linux, use this command:
 ```bash
 cat vscode-extensions.txt | while read line; do code --install-extension $line; done
 ```
+
+This shell script is compatible with both Ubuntu and macOS. However, the script assumes that VSCode is installed on the system and the code command is set in the PATH.
+On macOS, if you downloaded and installed VSCode from the official website, the code command might not be set in the PATH. In that case, please follow these steps to set the PATH:
+
+1. Open VSCode.
+2. Open the Command Palette (Cmd+Shift+P).
+3. Type "Shell Command: Install 'code' command in PATH" and select it.
+4, Restart the terminal to reflect the changes.
